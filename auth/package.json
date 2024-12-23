@@ -7,17 +7,23 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
+
     "start": "node index.js",
+
+    "build": "echo 'No build step required'",
+
     "dev": "nodemon index.js -e js,njk",
     "test": "echo \"Tests passed\" && exit 0",
     "prettify": "prettier --write",
     "prettify:all": "prettier --write \"./**/*.{js,json}\"",
     "lint": "eslint",
     "lint:all": "eslint \"**/*.js\"",
+
     "migrate": "node migrate.js"
   },
+
   "engines": {
-    "node": ">=12.0.0"
+    "node": "18.x"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
