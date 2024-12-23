@@ -1,0 +1,26 @@
+{
+  "name": "timers-noauth",
+  "plugins": {
+    "postgresql": {}
+  },
+  "deployments": {
+    "production": {
+      "env": {
+        "DB_HOST": "${{ plugin.postgresql.connectionString.host }}",
+        "DB_NAME": "${{ plugin.postgresql.connectionString.database }}",
+        "DB_USER": "${{ plugin.postgresql.connectionString.user }}",
+        "DB_PASS": "${{ plugin.postgresql.connectionString.password }}",
+        "DB_PORT": "${{ plugin.postgresql.connectionString.port }}"
+      },
+      "build": {
+        "commands": [
+          "npm install",
+          "npm run migrate"
+        ]
+      },
+      "start": {
+        "command": "npm start"
+      }
+    }
+  }
+}
